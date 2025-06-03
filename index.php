@@ -2,7 +2,7 @@
 require 'vendor/autoload.php'; // MongoDB 드라이버 오토로딩
 
 function sayHello($name) {
-	echo "Hello $name!";
+  echo "Hello $name!";
 }
 
 // MongoDB 연결
@@ -16,25 +16,27 @@ $movies = $collection->find();
 ?>
 
 <html>
-	<head>
-		<title>Visual Studio Code Remote :: PHP</title>
-	</head>
-	<body>
-		<h1>👋 PHP MongoDB 연동 예제</h1>
+  <head>
+    <title>Visual Studio Code Remote :: PHP</title>
+  </head>
+  <body>
+    <h1>👋 PHP MongoDB 연동 예제</h1>
 
-		<?php 
-			sayHello('remote world'); 
-		?>
+    <?php 
+      sayHello('remote world'); 
+    ?>
 
-		<h2>🎬 영화 목록 (MongoDB)</h2>
-		<ul>
-			<?php foreach ($movies as $movie): ?>
-				<li><?= $movie['title'] ?> (<?= $movie['year'] ?>)</li>
-			<?php endforeach; ?>
-		</ul>
+    <h2>🎬 영화 목록 (MongoDB)</h2>
+    <ul>
+      <?php foreach ($movies as $movie): ?>
+        <li>
+          <?= htmlspecialchars($movie['title']) ?> (<?= $movie['release_date']->toDateTime()->format('Y') ?>)
+        </li>
+      <?php endforeach; ?>
+    </ul>
 
-		<hr>
+    <hr>
 
-		<?php phpinfo(); ?>
-	</body>
+    <?php phpinfo(); ?>
+  </body>
 </html>
