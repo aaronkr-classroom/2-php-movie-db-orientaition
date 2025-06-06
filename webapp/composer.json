@@ -1,0 +1,16 @@
+{
+    "name": "admini/webapp",
+    "autoload": {
+        "psr-4": {
+            "Admini\\Webapp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "skip"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "1.21"
+    }
+}
