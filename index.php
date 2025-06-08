@@ -1,42 +1,22 @@
 <?php
-require 'vendor/autoload.php'; // MongoDB 드라이버 오토로딩
+
+/*----------------------------------------------------------------------------------------
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License. See LICENSE in the project root for license information.
+ *---------------------------------------------------------------------------------------*/
 
 function sayHello($name) {
-  echo "Hello $name!";
+	echo "Hello $name!";
 }
 
-// MongoDB 연결
-$client = new MongoDB\Client("mongodb+srv://ID:PASSWORD@cluster0.4irrwae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
-
-// 컬렉션 선택
-$collection = $client->moviedb->movies;
-
-// 데이터 조회
-$movies = $collection->find();
 ?>
 
 <html>
-  <head>
-    <title>Visual Studio Code Remote :: PHP</title>
-  </head>
-  <body>
-    <h1>👋 PHP MongoDB 연동 예제</h1>
-
-    <?php 
-      sayHello('remote world'); 
-    ?>
-
-    <h2>🎬 영화 목록 (MongoDB)</h2>
-    <ul>
-      <?php foreach ($movies as $movie): ?>
-        <li>
-          <?= htmlspecialchars($movie['title']) ?> (<?= $movie['release_date']->toDateTime()->format('Y') ?>)
-        </li>
-      <?php endforeach; ?>
-    </ul>
-
-    <hr>
-
-    <?php phpinfo(); ?>
-  </body>
+	<head>
+		<title>Visual Studio Code Remote :: PHP</title>
+	</head>
+	<body>
+		<?php sayHello('Aaron!!'); ?>
+		<h1><a href="./webapp">Movie Web App으로 이동</a>
+	</body>
 </html>
