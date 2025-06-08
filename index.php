@@ -6,7 +6,7 @@ function sayHello($name) {
 }
 
 // MongoDB 연결
-$client = new MongoDB\Client("mongodb+srv://KIMIKGYEOM:20241752@cluster0.4irrwae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+$client = new MongoDB\Client("mongodb+srv://ID:PASSWORD@cluster0.4irrwae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 // 컬렉션 선택
 $collection = $client->moviedb->movies;
